@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: website
   annotations:
-    metallb.universe.tf/address-pool: production-public-ips
+    metallb.universe.tf/address-pool: first-pool
 spec:
   ports:
   - port: 80
