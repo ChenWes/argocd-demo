@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  # annotations:
+  #   kubernetes.io/ingress.class: "nginx"
+  name: website
+spec:
+  ingressClassName: nginx
+  rules: # 一个ingress可以配置多个rules
+  - host: cfmes-web.com # 域名配置，可以不写，匹配*，或者写 *.bar.com
+    http:
+      paths: # 相当于nginx的location，同一个host可以配置多个path
+      - htmlpage:
+          service:
+            name: website
+            port:
+              number: 80          
+        pathType: Prefix          
+        path: /
