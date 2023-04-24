@@ -10,7 +10,7 @@ spec:
   - host: cfmes-web.com # 域名配置，可以不写，匹配*，或者写 *.bar.com
     http:
       paths: # 相当于nginx的location，同一个host可以配置多个path
-      - htmlpage:
+      - backend:
           service:
             name: website
             port:
